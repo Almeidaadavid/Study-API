@@ -1,0 +1,21 @@
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar diretório de compilação e arquivos binários
+bin/
+obj/
+
+# Ignorar configurações específicas do usuário da IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar logs e arquivos de depuração
+*.log
+
+# Ignorar arquivos de cache e backup
+*.bak
+*.tmp
