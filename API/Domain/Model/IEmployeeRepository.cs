@@ -8,6 +8,6 @@ namespace API.Domain.Model
         void AddEmployee(Employee employee);
         List<EmployeeDTO> Get(int pageNumber, int pageQuantity);
         List<EmployeeDTO> Get();
-        EmployeeDTO Get(int id);
+        Employee Get(int id);
     }
 }

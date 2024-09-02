@@ -26,15 +26,9 @@ namespace API.Data.Repositories
             return lstEmployees;
         }
 
-        public EmployeeDTO? Get(int id)
+        public Employee? Get(int id)
         {
-            var a = _context.Employees.Find(id);
-            EmployeeDTO b = new EmployeeDTO() {
-                id = a!.id,
-                NameEmployee = a.name,
-                Photo = a.photo
-            };
-            return b;
+            return _context.Employees.Find(id);
         }
 
         public List<EmployeeDTO> Get(int pageNumber, int pageQuantity)

@@ -1,3 +1,4 @@
+using API.Application.Mapping;
 using API.Data.Repositories;
 using API.Domain.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,6 +16,9 @@ namespace API
             // Add services to the container.
             builder.Services.AddDbContext<ConnectionContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DataBase")));
             builder.Services.AddControllers();
+
+            builder.Services.AddAutoMapper(typeof(DomainToDTOMapping));
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(x => {
