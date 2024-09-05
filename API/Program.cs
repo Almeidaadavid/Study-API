@@ -1,18 +1,23 @@
 using API.Application.Mapping;
 using API.Data.Repositories;
-using API.Domain.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using dotenv.net;
+using API.Data.Connection;
+using dotenv.net.Utilities;
+using API.Domain.Model.EmployeeAggregate;
+using API.Domain.Model.PersonAggregate;
 
 namespace API
 {
     public class Program {
         public static void Main(string[] args) {
+            DotEnv.Load();
             var builder = WebApplication.CreateBuilder(args);
-
+            ConnectionStringBuilder.BuildConnectionString();
             // Add services to the container.
             builder.Services.AddDbContext<ConnectionContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DataBase")));
             builder.Services.AddControllers();
@@ -44,6 +49,8 @@ namespace API
             });
 
             builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddTransient<IPersonRepository, PersonRepository>();
+
             //builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             byte[] key = System.Text.ASCIIEncoding.ASCII.GetBytes(Key.Secret);
             builder.Services.AddAuthentication(x => {

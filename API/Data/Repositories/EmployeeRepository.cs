@@ -1,5 +1,5 @@
 ﻿using API.Domain.DTOs;
-using API.Domain.Model;
+using API.Domain.Model.EmployeeAggregate;
 
 namespace API.Data.Repositories
 {

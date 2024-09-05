@@ -1,7 +1,7 @@
 ﻿using API.Domain.DTOs;
 using System.Reflection;
 
-namespace API.Domain.Model
+namespace API.Domain.Model.EmployeeAggregate
 {
     public interface IEmployeeRepository
     {

@@ -1,8 +1,9 @@
 ﻿using API.Domain.DTOs;
-using API.Domain.Model;
+using API.Domain.Model.EmployeeAggregate;
 using AutoMapper;
 
-namespace API.Application.Mapping {
+namespace API.Application.Mapping
+{
     public class DomainToDTOMapping : Profile {
 
         public DomainToDTOMapping() {

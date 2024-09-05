@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API.Domain.Model
+namespace API.Domain.Model.EmployeeAggregate
 {
     [Table("employee")]
     public class Employee

@@ -11,7 +11,7 @@ namespace API.Controllers
         public IActionResult Auth(string username, string password) {
             // Static Method, no need search in database.
             if (username == "admin" && password == "admin") {
-                object token = TokenService.GenerateToken(new Domain.Model.Employee());
+                object token = TokenService.GenerateToken(new Domain.Model.EmployeeAggregate.Employee());
                 return Ok(token);
             }
 

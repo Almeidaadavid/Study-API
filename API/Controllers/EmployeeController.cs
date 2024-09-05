@@ -1,6 +1,6 @@
 ﻿using API.Application.ViewModel;
 using API.Domain.DTOs;
-using API.Domain.Model;
+using API.Domain.Model.EmployeeAggregate;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +23,6 @@ namespace API.Controllers
     // Criar rota de tratamento de erro para ambiente de teste e produção.
     // Configurar o program.cs para indicar o tratamento de erro.
     // Caso seja produção, apontar para app.UseExceptionHandler("error");, senão app.UseExceptionHandler("error-local-development");
-
-
-
 
     public class EmployeeController : ControllerBase {
         private readonly IEmployeeRepository _employeeRepository;
@@ -89,8 +86,8 @@ namespace API.Controllers
         public IActionResult GetByID(int ID) {
 
            Employee Employee = _employeeRepository.Get(ID);
-            EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(Employee);
-            return Ok(employeeDTO);
+           EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(Employee);
+           return Ok(employeeDTO);
         }
     }
 }

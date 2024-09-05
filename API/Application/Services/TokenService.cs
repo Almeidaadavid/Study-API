@@ -1,4 +1,4 @@
-﻿using API.Domain.Model;
+﻿using API.Domain.Model.EmployeeAggregate;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
